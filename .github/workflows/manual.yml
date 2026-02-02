@@ -1,0 +1,21 @@
+name: Build Sky Lab APK
+on: [workflow_dispatch, push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.0'
+      - name: Project Setup
+        run: |
+          flutter create . --platforms android
+          flutter pub get
+      - name: Build APK
+        run: flutter build apk --release
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SkyLab-Final-App
+          path: build/app/outputs/flutter-apk/app-release.apk
