@@ -1,7 +1,7 @@
 name: sky_lab
-description: Sky Lab Investment Platform
+description: Sky Lab Investment Platform - Pro Version
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -10,11 +10,30 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  
+  # أساسيات النظام والتسجيل (Firebase)
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  
+  # نظام القصص والبثوث والفيديو
+  story_view: ^0.12.3
+  video_player: ^2.8.1
+  chewie: ^1.7.1
+  
+  # نظام التجميع التلقائي والأوقات (للسحب الأسبوعي)
+  intl: ^0.19.0
+  ntp: ^2.0.0
+  
+  # الرسوم البيانية والألعاب الترفيهية
+  fl_chart: ^0.66.0
+  flutter_spinkit: ^5.2.0
+  confetti: ^0.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
